@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>memento</title>
+        <link rel="icon" href="/static/images/memento-logo.svg">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lilita+One|Public+Sans&display=swap" rel="stylesheet">    
+        <link rel="stylesheet" type="text/css" href="/static/styles/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/styles/styles.css">
+
+        {% block page_styles %}{% endblock page_styles %}
+
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/vue.js"></script>
+    </head>
+    <body class="noverflow">
+        {% include "web/includes/splash.html" %}
+        
+        <div v-cloak class="container">
+            {% include "web/includes/alerts.html" %}
+
+            {% block header_override %}
+                {% include "web/includes/header.html" %}
+            {% endblock header_override %}
+            
+            {# <h2 class="page-header">
+                {% block page_header_text %}{% endblock page_header_text %}
+            </h2> #}
+
+            {% block content %}{% endblock content %}
+            {% block footer_override %}
+                <footer>
+                    {% include "web/includes/copyright.html" %}
+                </footer>
+            {% endblock footer_override %}
+        </div>
+
+        <script>
+        {% block user_redirect_url %}
+            let user_redirect_url = "{{ url_for("index") }}";
+        {% endblock user_redirect_url %}
+        </script>
+
+        <script>
+            let language_url = "/static/js/language/language.json";
+            let documents_url = "{{ url_for("documents") }}";
+            let index_url = "{{ url_for('index') }}";
+            let admin_url = "{{ url_for("admin_page") }}";
+            let user_main_url = "{{ url_for("user_main")}}";
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        <script src="/static/js/firebase_stuff.js"></script>
+
+        {% block js_vars %}{% endblock js_vars %}
+        <script src="/static/js/main.js"></script>
+        {% block page_scripts %}{% endblock page_scripts %}
+
+    </body>
+</html>

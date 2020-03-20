@@ -1,0 +1,160 @@
+.container main {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: minmax(540px, 100vh) auto;
+  -ms-grid-columns: auto;
+      grid-template: minmax(540px, 100vh) auto/auto;
+  height: 100vh;
+  width: 100%;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #dcffcc;
+  overflow-x: hidden;
+}
+
+.container main .loginput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  min-width: 215px;
+  max-width: 250px;
+  padding: 40px 80px;
+  border: 10px solid #231a38;
+  border-radius: 16px;
+  background: #baabda;
+  z-index: 4;
+}
+
+.container main .loginput section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container main .loginput section label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 7px;
+}
+
+.container main .loginput section input, .container main .loginput section button {
+  font-size: 1.05em;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+}
+
+.container main .loginput section .forgot-password {
+  font-size: 1.05em;
+  color: #8a4169;
+  text-decoration: none;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.container main .loginput section .forgot-password:focus, .container main .loginput section .forgot-password:hover {
+  color: #ff58b4;
+}
+
+.container main .loginput section .forgot-password:focus {
+  -webkit-text-decoration: 2px underline #58ffd0;
+          text-decoration: 2px underline #58ffd0;
+}
+
+.container main .loginput section button {
+  padding: 10px 0;
+  background: #9fdfcd;
+  color: #231a38;
+  border: 3px solid transparent;
+  -webkit-box-shadow: 0 0 2px 1px #231a38;
+          box-shadow: 0 0 2px 1px #231a38;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.container main .loginput section button:hover {
+  background: #baf7e5;
+}
+
+.container main .loginput section button:active {
+  background: #89c2b2;
+}
+
+.container main .loginput section button:focus {
+  border-bottom: 3px solid #ff58b4;
+}
+
+.container main .loginput section.form-section__forgot-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.container main .loginput section.form-section__logo {
+  text-align: center;
+  font-size: 1.05em;
+  color: #231a38;
+}
+
+.container main .loginput section.form-section__logo .memento-logo {
+  width: 100px;
+  margin: auto;
+}
+
+.container main .loginput section.form-section__logo .memento-logo img {
+  width: 100%;
+}
+
+.container main .copyright {
+  width: 100%;
+  padding-bottom: 15px;
+  text-align: center;
+  z-index: 4;
+}
+
+input:-moz-autofill, input:autofill {
+  background: blue !important;
+  filter: none !important;
+}
+
+@media screen and (max-width: 520px) {
+  .container main {
+    -ms-grid-rows: minmax(460px, 100vh) auto;
+        grid-template-rows: minmax(460px, 100vh) auto;
+    background: #baabda;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 10px solid #231a38;
+  }
+  .container main .loginput {
+    padding: 0;
+    border: none;
+  }
+  .container main .left-side {
+    display: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */

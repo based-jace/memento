@@ -1,0 +1,70 @@
+{% extends "web/layouts/default.html" %}
+
+{% block page_header_text %}[[langText.documents]]{% endblock page_header_text %}
+
+{% block content %}
+<main>
+    <div class="left-side"></div>
+    <div class="toolbar">
+        <div class="tools">
+            <div class="search-and-filter">
+                <label for="file-search" class="search-icon"><i class="fas fa-search"></i></label>
+                <input id="file-search" class="search" v-model="search" type="text" name="search" v-bind:placeholder="langText.search" />
+                <div id="filter-container" v-bind:title="langText.sortBy">
+                    <button class="filter dropbtn">
+                        <h5 key="filterchoice">
+                            [[langText.sortBy]]
+                            <i class="fas fa-angle-down"></i>
+                        </h5>
+                    </button>
+                    <div class="filter-dropdown-content filter-closed">
+                        <button data-sort="name">[[langText.name]]</button>
+                        <button data-sort="timestamp">[[langText.date]]</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tool-buttons">
+                <button id="uploadDocButton" class="column-item uploadDocButton" type="button" value="go">
+                    <input class="invisible goaway" type="file" name="uploadDoc" multiple tabIndex="-1">
+                    <h3>[[langText.upload]]</h3>
+                </button>
+                <button v-on:click="deleteAll" class="column-item deleteDocsButton" type="button">
+                    <h3>[[langText.delete]]</h3>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="documents">
+        <div v-for="document in sortedDocuments" class="documentitembox">
+            <div v-on:click="toggleSelected" class="documentitem">
+                <p class="documentname">[[document.name]]</p>
+                <p class="document-timestamp">[[document.timestamp]]</p>
+                <a v-on:click="downloadThis" class="viewdocument doc-download" download>
+                    <span>[[langText.download]]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% include "web/includes/spinner.html" %}
+</main>
+<div class="footer-tools">
+    <button class="uploadDocButton">[[langText.upload]]</button>
+    <button v-on:click="downloadAll" class="download-button">[[langText.download]]</button>
+    <button v-on:click="deleteAll" class="deleteDocsButton">[[langText.delete]]</button>
+</div>
+<div v-on:click="downloadAll" id="downloadbutton" v-bind:title="langText.downloadSelected">
+    <i class="fas fa-download"></i>
+</div>
+<a id="actual-file-download" download class="hidden"></a>
+{% endblock content %}
+    
+{% block page_scripts %}
+<script src="/static/js/pagescripts/usermain.js"></script>
+{% endblock page_scripts %}
+
+
+
+
+
+
+

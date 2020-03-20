@@ -1,0 +1,1 @@
+finishLoad = loadVue;

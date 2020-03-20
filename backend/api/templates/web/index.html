@@ -1,0 +1,51 @@
+{% extends "web/layouts/default.html" %}
+
+{% block page_styles %}
+<link rel="stylesheet" type="text/css" href="/static/styles/index.css">
+{% endblock page_styles %}
+
+{% block user_redirect_url %}
+    let user_redirect_url = "{{ url_for("user_main") }}";
+{% endblock user_redirect_url %}
+
+{% block content %}
+    {% block header_override %}{% endblock header_override %}
+    {% block side_nav_override %}{% endblock side_nav_override %}
+    {% include "web/includes/languageBox.html" %}
+
+    <main>
+        <form class="loginput" method='POST' action='{{ url_for("user_main")}}'>
+            <section class="form-section__logo">
+                <div class="memento-logo">
+                    <img src="/static/images/memento-logo.svg" alt="Memento Camera Logo">
+                </div>
+                <h2>memento</h2>
+            </section>
+            
+            <section class="form-section__input">
+                <label for="username">[[langText.emailAddress]]</label>
+                <input id="username" type="text" name="username" class="textfield" v-bind:placeholder="langText.emailAddress" />
+            </section>
+            <section class="form-section__input">
+                <label for="password">[[langText.password]]</label>
+                <input id="password" type="password" name="password" class="textfield" v-bind:placeholder="langText.password" />
+            </section>
+            <section class="form-section__button">
+                <button type="submit" id="logbutton">[[langText.login]]</button>
+            </section>
+        </form>
+        <div class="left-side"></div>
+        {% include "web/includes/copyright.html" %}
+    </main>
+
+{% endblock content %}
+
+{% block footer_override %}{% endblock footer_override %}
+
+{% block js_vars %}
+    <script>ifUser = true;</script>
+{% endblock js_vars %}
+
+{% block page_scripts %}
+    <script src="/static/js/pagescripts/index.js"></script>
+{% endblock page_scripts %}

@@ -1,0 +1,122 @@
+@import "vars.scss";
+
+.container{
+    main{
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template: minmax(540px, 100vh) auto / auto;
+        height: 100vh;
+        // min-height: 350px;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        background: $ternary__light2;
+        overflow-x: hidden;
+        .loginput{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            min-width: 215px;
+            max-width: 250px;
+            padding: 40px 80px;
+            border: 10px solid $primary__dark;
+            border-radius: 16px;
+            background: $primary;
+            z-index: 4;
+            section{
+                width: 100%;
+                margin-bottom: 20px;
+                label{
+                    align-self: flex-start;
+                    margin-left: 7px;
+                }
+                input, button{
+                    font-size: 1.05em;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 5px;
+                }
+                .forgot-password{
+                    font-size: 1.05em;
+                    color: $quaternary__dark;
+                    // text-shadow: 0px 0px 2px $primary__dark;
+                    text-decoration: none;
+                    transition: .2s ease-in-out;
+                    &:focus, &:hover{
+                        color: $quaternary__bright;
+                    }
+                    &:focus{
+                        text-decoration: 2px underline $secondary__bright;
+                    }
+                }
+                button{
+                    padding: 10px 0;
+                    background: $secondary;
+                    color: $primary__dark;
+                    border: 3px solid transparent;
+                    box-shadow: 0 0 2px 1px $primary__dark;
+                    transition: .2s ease-in-out;
+                    &:hover{
+                        background: $secondary__light;
+                    }
+                    &:active{
+                        background: $secondary__shade;
+                    }
+                    &:focus{
+                        border-bottom: 3px solid $quaternary__bright;
+                    }
+                }
+                &.form-section__forgot-password{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+                &.form-section__logo{
+                    text-align: center;
+                    font-size: 1.05em;
+                    color: $primary__dark;
+                    .memento-logo{
+                        width: 100px;
+                        margin: auto;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .copyright{
+            width: 100%;
+            padding-bottom: 15px;
+            text-align: center;
+            z-index: 4;
+        }
+    }
+}
+input:-moz-autofill, input:autofill{
+    background: blue!important;
+    filter: none!important;
+}
+
+@media screen and (max-width: $screen-width__sm){
+    .container{
+        main{
+            grid-template-rows: minmax(460px, 100vh) auto;
+            background: $primary;
+            box-sizing: border-box;
+            border: 10px solid $primary__dark;
+            .loginput{
+                // width: 100%;
+                // max-width: none;
+                padding: 0;
+                border: none;
+            }
+            .left-side{
+                display: none;
+            }
+        }
+    }
+}

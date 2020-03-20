@@ -1,0 +1,12 @@
+{
+  "FLASK_ENV": "development",
+  "DEPLOYMENT_LEVEL": "staging",
+  "SECRET_KEY": "CHANGE_THIS",
+  "DOCUMENTS": {
+    "USER_COLLECTION": "demo-user",
+    "FORGOT_PASSWORD_TOKEN": "password-reset-token",
+    "BUCKET": "yourappname.appspot.com",
+    "GCS_PATH": "user/",
+    "USER_DOWNLOADS_PATH": "user-downloads/"
+  }
+}

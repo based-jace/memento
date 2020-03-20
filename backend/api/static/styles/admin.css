@@ -1,0 +1,32 @@
+.container {
+  -ms-grid-rows: 72px calc(100vh - (72px + 42px)) 42px;
+  -ms-grid-columns: minmax(auto, 100vw);
+      grid-template: 72px calc(100vh - (72px + 42px)) 42px/minmax(auto, 100vw);
+}
+
+.container main .toolbar .tools {
+  -ms-grid-rows: auto;
+  -ms-grid-columns: 100%;
+      grid-template: auto / 100%;
+}
+
+.container main .toolbar .tools .search-and-filter {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+}
+
+.container footer {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    -ms-grid-rows: 114px calc(100vh - (114px + 42px)) 42px;
+    -ms-grid-columns: minmax(auto, 100vw);
+        grid-template: 114px calc(100vh - (114px + 42px)) 42px/minmax(auto, 100vw);
+  }
+}
+/*# sourceMappingURL=admin.css.map */

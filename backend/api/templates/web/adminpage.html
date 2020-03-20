@@ -1,0 +1,38 @@
+{% extends "web/layouts/default.html" %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="/static/styles/admin.css">
+{% endblock page_styles %}
+
+{% block content %}
+<main>
+    <div class="left-side"></div>
+    <section class="toolbar">
+        <div class="tools">
+            <div class="search-and-filter">
+                <label for="file-search" class="search-icon"><i class="fas fa-search"></i></label>
+                <input id="file-search" class="search" v-model="search" type="text" name="search" v-bind:placeholder="langText.searchClients" />
+            </div>
+        </div>
+    </section>
+    <div id="users">
+        <div v-for="u in filteredUsers" class="useritembox">
+            <div class="user">
+                <p class="username"> [[u.first_name]] [[u.last_name]] </p>
+                <p class="idnum"> [[u.vid]]</p>
+                <div class="viewedit">
+                    <a v-bind:href="u.user_url">[[langText.view]]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+{% block js_vars %}
+<script>adminPage = true;</script>
+{% endblock js_vars %}
+
+{% block page_scripts %}
+<script src="/static/js/pagescripts/adminpage.js"></script>
+{% endblock page_scripts %}

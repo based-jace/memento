@@ -1,0 +1,22 @@
+# Environments
+.env
+.venv
+env*/
+venv*/
+ENV/
+
+# Costum
+.iml
+.idea
+*.py___jb_tmp___
+*.json___jb_tmp___
+backend/sync_server/venv1/
+backend/sync_server/sync/
+*.idea
+*.pem
+user-downloads
+firebase_creds.json
+.vscode/
+__pycache__
+.webassets-cache
+private_*.js*
