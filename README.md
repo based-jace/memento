@@ -75,7 +75,7 @@ Next, let's set up our cloud storage.
 
 16. Go to the "Storage" page using the left-side navigation. Click "Get started," then "Next." Click "Done."
 
-**Note:** Again, this is very in
+**Note:** Again, this is insecure. Although all of these files will be encrypted, it's still worth changing the rules to make attaining the files more difficult.
 
 ### Step 3. Creating a Master Key
 Since memento has an encryption system for file security, we're going to need to create a master key. 
