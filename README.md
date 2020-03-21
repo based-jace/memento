@@ -105,6 +105,7 @@ We're almost there!
 
 1. In your terminal, go back down to `{{ project_name }}/backend/api` and run `python api.py`.
 2. Your server should now be up and running on port 5000. Go to localhost:5000, and you should be presented with the login page:
+
 ![Image of the index page](https://jacemedlin.xyz/portfolio-examples/memento.png "memento index page")
 
 ### Finish
