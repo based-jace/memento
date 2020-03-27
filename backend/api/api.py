@@ -31,14 +31,19 @@ storage_client = None   # Client for interacting with Google Cloud Storage
 bucket = None           # Google Cloud Storage bucket
 encryption_key = None   # Encrypts and decrypts files
 
-with open('./config.json') as config_file:
-    config = json.load(config_file)
+try:
+    with open('./config.json') as config_file:
+        config = json.load(config_file)
+except Exception:
+    print(traceback.format_exc())
+    print("config.json is missing or invalid.")
+    exit()
 
 try:
     with open('./MASTER_KEY.pem') as key_file:
         # Encoded encryption key
         master_key = key_file.read()
-except Exception as e:
+except Exception:
     print(traceback.format_exc())
     print("No master key. Please run generate_master_key.py")
     exit()
@@ -46,7 +51,16 @@ except Exception as e:
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = './firebase_creds.json'
 os.environ['FLASK_ENV'] = config["FLASK_ENV"]
 
-cred = credentials.Certificate('./firebase_creds.json')
+try:
+    cred = credentials.Certificate('./firebase_creds.json')
+except FileNotFoundError:
+    print(traceback.format_exc())
+    print("No firebase credentials found. Please add them.")
+    exit()
+except Exception:
+    print(traceback.format_exc())
+    exit()
+
 default_app = firebase_admin.initialize_app(cred)
 
 db = firestore.client()
