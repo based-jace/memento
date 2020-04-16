@@ -21,7 +21,7 @@ Once you have git installed, you're going to need to clone the repository.
 ### Step 2. Setting Up Firebase
 1. In your browser of choice, go to https://console.firebase.google.com/ and click "Add project."
 2. Give your project a name.
-3. Keep following the onscreen instructions until it redirects you to the overview page. The URL should look something like: https://console.firebase.google.com/u/0/project/{{ YOUR-PROJECT-ID-HERE }}/overview
+3. Keep following the onscreen instructions until it redirects you to the overview page. The URL should look something like: `https://console.firebase.google.com/u/0/project/{{ YOUR-PROJECT-ID-HERE }}/overview`
 4. In the top-left corner, next to "Project Overview," there should be a gear. Click it, then click on the first dropdown item: "Project settings."
 5. Go to the "Service Accounts" tab. Generate a new private key (by clicking the button that says "Generate new private key"), then click on "Generate key". This file allows the app to interact with Firebase on your behalf.
 6. Cut or copy the generated JSON file. We're going to put this in a place reachable by our project.
@@ -93,7 +93,7 @@ Creating a virtual environment for each of your projects is a great practice, be
 ### Step 4. Server-Side Config Modification
 1. In your file explorer, go back to `{{ project_name }}/backend/api`. Open `config.json` in your text editor.
 2. Change `SECRET_KEY`'s value to something better.
-3. Change `BUCKET`'s value to `"{{ Firebase project's id }}.appspot.com"`. You can find your project id in your project's Firebase console URL: https://console.firebase.google.com/u/0/project/**{{ YOUR-PROJECT-ID-HERE }}**/overview. 
+3. Change `BUCKET`'s value to `"{{ Firebase project's id }}.appspot.com"`. You can find your project id in your project's Firebase console URL: `https://console.firebase.google.com/u/0/project/**{{ YOUR-PROJECT-ID-HERE }}**/overview.`
 
 This will be the URL from which we'll connect to our cloud storage bucket.
 
