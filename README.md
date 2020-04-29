@@ -3,6 +3,16 @@
 
 Working demo at [memento.jacemedlin.xyz](https://memento.jacemedlin.xyz).
 
+### Demo Credentials:
+
+admin:
+* username: billtest@test.com
+* password: password123
+
+regular user:
+* username: petetest@test.com (Beatles reference?)
+* password: password123
+
 ## About
 memento is a user/admin file-storage app built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
 
