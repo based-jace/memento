@@ -1,6 +1,8 @@
 # memento
 #### User/admin file-storage web app built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 Working demo at [memento.jacemedlin.xyz](https://memento.jacemedlin.xyz).
 
 ### Demo Credentials:
