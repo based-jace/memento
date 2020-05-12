@@ -1,9 +1,9 @@
-# memento
-#### User/admin file-storage web app built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
+# Secretary
+#### File-storage web app for freelancing electronic secretaries built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Working demo at [memento.jacemedlin.xyz](https://memento.jacemedlin.xyz).
+Working demo at [secretary.jacemedlin.xyz](https://secretary.jacemedlin.xyz).
 
 ### Demo Credentials:
 
@@ -16,10 +16,10 @@ regular user:
 * password: password123
 
 ## About
-memento is a user/admin file-storage app built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
+Secretary is a user/admin file-storage app built with Flask, Vue, and GCP (Firestore and Google Cloud Storage).
 
-## How to Run memento
-To run your own instance of memento, you're going to need a Google account to set up a [Firebase](https://console.firebase.google.com/) project.
+## How to Run Secretary
+To run your own instance of Secretary, you're going to need a Google account to set up a [Firebase](https://console.firebase.google.com/) project.
 
 ## Walkthrough
 ### Step 0. Install [git](https://git-scm.com/) and [Python3](https://www.python.org/downloads/)
@@ -27,8 +27,8 @@ To run your own instance of memento, you're going to need a Google account to se
 Once you have git installed, you're going to need to clone the repository.
 
 1. First, open a terminal in your directory of choice. 
-2. Type `git clone https://github.com/based-jace/memento.git` and press "Enter." This creates a copy of the source code on your machine.
-3. `cd` into your new directory. If you didn't set your own, the new folder should be `memento`.
+2. Type `git clone https://github.com/based-jace/secretary.git` and press "Enter." This creates a copy of the source code on your machine.
+3. `cd` into your new directory. If you didn't set your own, the new folder should be `secretary`.
 
 ### Step 2. Setting Up Firebase
 1. In your browser of choice, go to https://console.firebase.google.com/ and click "Add project."
@@ -90,7 +90,7 @@ Next, let's set up our cloud storage.
 **Note:** Again, this is insecure. Although all of these files will be encrypted, it's still worth changing the rules to make attaining the files more difficult.
 
 ### Step 3. Creating a Master Key
-Since memento has an encryption system for file security, we're going to need to create a master key. 
+Since this app has an encryption system for file security, we're going to need to create a master key. 
 
 1. In your terminal, go back to `{{ project_name }}/backend/api` and run `python generate_master_key.py`. This key is going to be a base64-coded key that gets decoded in our app.
 
@@ -110,15 +110,13 @@ Creating a virtual environment for each of your projects is a great practice, be
 This will be the URL from which we'll connect to our cloud storage bucket.
 
 ### Step 5. Installing Dependencies
-1. In your terminal, go back to your root folder: `{{ project_name }}`. Run `pip install -r requirements.txt`. This installs all of the necessary dependencies memento will need to run.
+1. In your terminal, go back to your root folder: `{{ project_name }}`. Run `pip install -r requirements.txt`. This installs all of the necessary dependencies the app will need to run.
 
 ### Step 6. Run the app
 We're almost there!
 
 1. In your terminal, go back down to `{{ project_name }}/backend/api` and run `python api.py`.
-2. Your server should now be up and running on port 5000. Go to localhost:5000, and you should be presented with the login page:
-
-![Image of the index page](https://jacemedlin.xyz/portfolio-examples/memento.png "memento index page")
+2. Your server should now be up and running on port 5000. Go to localhost:5000, and you should be presented with the login page.
 
 ### Finish
 We did it. Awesome. If you have any questions, don't hesitate to reach out.
